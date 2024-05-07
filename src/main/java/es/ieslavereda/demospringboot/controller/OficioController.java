@@ -1,9 +1,7 @@
 package es.ieslavereda.demospringboot.controller;
 
 import es.ieslavereda.demospringboot.model.Oficio;
-import es.ieslavereda.demospringboot.repository.OficioRepository;
 import es.ieslavereda.demospringboot.service.OficioService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
