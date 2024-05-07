@@ -9,15 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@RequestMapping("/api/v1")
+
 @RestController
-public class UserController {
+public class UserController extends BaseController{
 
     private final Logger LOGGER = Logger.getLogger(getClass().getCanonicalName());
 
@@ -52,17 +50,6 @@ public class UserController {
         }catch (SQLException e){
             return getResponseError(e);
         }
-
-    }
-
-    private ResponseEntity<?> getResponseError(SQLException e) {
-
-        Map<String,String> map = new HashMap<>();
-
-        map.put("errorCode",String.valueOf(e.getErrorCode()));
-        map.put("message",e.getMessage());
-
-        return new ResponseEntity<>(map, HttpStatus.INTERNAL_SERVER_ERROR);
 
     }
 
